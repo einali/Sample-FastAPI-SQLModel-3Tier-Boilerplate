@@ -11,12 +11,9 @@ from typing import Optional
 
 
 class BasicDTO(SQLModel):
-    pass
-class PKDTO():
     pk_uuid: UUID
-
-class CreatedAtDTO:
     created_at: datetime
+
 
 class LogicalDeleteDTO:
     is_deleted: bool
@@ -25,7 +22,6 @@ class LogicalDeleteDTO:
 
 class UpdatedAtDTO:
     updated_at: datetime
-    created_at: datetime
 
 
 
