@@ -12,5 +12,3 @@ class StudentLogic(BaseLogic):
     def __init__(self, session: Session = Depends(get_session), dao: StudentDAO = Depends(StudentDAO), ):
         super().__init__(session, dao)
 
-    def get_list(self,offset: int, limit: int) -> list[BaseEntity]:
-        return super().get_list(offset,limit)
