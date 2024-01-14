@@ -1,7 +1,9 @@
+from enum import unique
+
 from package_name.models.enums.base_enum import BaseType
 
-
-class NationalityType(BaseType):
+@unique
+class NationalityType(str,BaseType):
     IRAN = ("IRAN", 1648195)
     FOREIGN = ("FOREIGN", 0)
 

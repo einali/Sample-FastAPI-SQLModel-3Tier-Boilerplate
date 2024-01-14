@@ -3,7 +3,7 @@ requires = ["flit"]
 build-backend = "flit.buildapi"
 
 [project]
-name = "Sample FastAPI SQLModel Boilerplate"
+name = "Sample_FastAPI_SQLModel_Boilerplate"
 authors = [
     { name = "Mehdi Einali", email = "einali@gmail.com" },
 ]

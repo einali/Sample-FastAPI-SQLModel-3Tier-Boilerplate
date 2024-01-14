@@ -7,6 +7,8 @@ CREATE TABLE boilerplate_student
     first_name      VARCHAR                     NULL,
     password      VARCHAR                     NULL,
     last_name      VARCHAR                     NULL,
+    nationality_type VARCHAR                   NOT NULL,
+
 
     PRIMARY KEY (pk_uuid)
 );
