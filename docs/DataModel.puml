@@ -1,0 +1,88 @@
+@startuml
+
+package Base {
+
+    class BaseEntity {
+        pk_uuid : uuid
+    }
+
+    class CreatedAtBaseEntity{
+        created_at : datetime
+    }
+
+    class UpdatedAtBaseEntity{
+        updated_at : datetime
+    }
+
+
+    class LogicalDeleteEntity{
+        is_deleted : bool
+    }
+
+    class CommonEntity{}
+
+    class AdminUser{}
+
+
+    class AdminBaseEntity{
+        created_by_uuid : uuid
+        updated_by_uuid : uuid
+        created_by: AdminUser
+        updated_by: AdminUser
+    }
+
+
+
+CommonEntity -up-|> LogicalDeleteEntity
+CommonEntity -up-|> CreatedAtBaseEntity
+CommonEntity -up-|> UpdatedAtBaseEntity
+CommonEntity -up-|> BaseEntity
+
+AdminBaseEntity -- AdminUser : created_by
+AdminBaseEntity -- AdminUser : updated_by
+
+}
+
+
+class StudentEntity{
+    firstname : str
+    lastname : str
+}
+
+class CourseEntity{
+    name : str
+    education_level : EducationLevel
+}
+
+class TeacherEntity{
+    fullname : str
+}
+
+TeacherEntity -up-|> AdminUser
+TeacherEntity -up-|> CommonEntity
+StudentEntity -up-|> CommonEntity
+CourseEntity -up-|> CommonEntity
+
+TeacherEntity "1"--"n" CourseEntity
+StudentEntity "n"--"n" CourseEntity
+StudentEntity "n"--"1" Nationality
+
+
+
+
+
+enum EducationLevel{
+    UNDERGRADUATE
+    MASTER
+    PHD
+}
+
+enum Nationality{
+    IRAN
+    FOREIGN
+}
+
+
+EducationLevel "1"--"n" CourseEntity
+
+@enduml
