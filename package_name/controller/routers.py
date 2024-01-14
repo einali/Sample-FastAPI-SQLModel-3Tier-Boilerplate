@@ -9,4 +9,4 @@ api_router = APIRouter()
 
 api_router.include_router(student_controller.router, prefix="/students")
 api_router.include_router(course_controller.router, prefix="/courses")
-api_router.include_router(teacher_controller.router, prefix="/courses")
+api_router.include_router(teacher_controller.router, prefix="/teachers")
