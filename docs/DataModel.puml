@@ -4,11 +4,10 @@ package Base {
 
     class BaseEntity {
         pk_uuid : uuid
+        created_at : datetime
+
     }
 
-    class CreatedAtBaseEntity{
-        created_at : datetime
-    }
 
     class UpdatedAtBaseEntity{
         updated_at : datetime
