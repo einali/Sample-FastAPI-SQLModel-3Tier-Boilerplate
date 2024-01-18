@@ -17,6 +17,8 @@ class BaseEntity(SQLModel):
     })
 
 
+
+
 class LogicalDeleteEntity():
     is_deleted: bool = Field(default=False)
 

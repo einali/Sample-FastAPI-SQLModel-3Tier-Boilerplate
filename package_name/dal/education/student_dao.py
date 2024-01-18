@@ -5,3 +5,4 @@ from package_name.models.entities.education.student_entity import   StudentEntit
 class StudentDAO(BaseDAO):
     __model_type__: StudentEntity = StudentEntity
 
+
